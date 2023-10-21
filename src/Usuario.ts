@@ -1,9 +1,10 @@
-export class UsuarioConsola {
+export class Usuario {
   private nombre: string;
   private apellido: string;
   private email: string;
   private password: string;
   private confirmpassword: string;
+
 
   private constructor (
     nombre: string,
@@ -20,19 +21,20 @@ export class UsuarioConsola {
       this.password = password;
       this.confirmpassword = confirmpassword;
     } else {
-      throw new Error("Las contraseñas no coinciden");
+      throw new Error("Las contraseñas no son iguales");
     }
   }
 
+  
   public static CrearUsuario (
     nombre: string,
     apellido: string,
     email: string,
     password: string,
     confirmpassword: string
-  ): UsuarioConsola {
-    const usuarioConsola = new UsuarioConsola(nombre, apellido, email, password, confirmpassword);
-    return usuarioConsola;
+  ): Usuario {
+    const usuario = new Usuario(nombre, apellido, email, password, confirmpassword);
+    return usuario;
   }
 
   private validarContraseña(password: string, confirmpassword: string): boolean {

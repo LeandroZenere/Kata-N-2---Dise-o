@@ -2,11 +2,15 @@ export class UsuarioDTO {
     private nombre: string;
     private apellido: string;
     private email: string;
+    private password: string;
+    private confirmpassword: string;
 
-    constructor(nombre: string, apellido: string, email: string) {
+    constructor(nombre: string, apellido: string, email: string, password:string, confirmpassword: string) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
+        this.password = password;
+        this.confirmpassword = confirmpassword;
     }
 
     obtenerNombreCompleto(): string {
@@ -36,5 +40,21 @@ export class UsuarioDTO {
     public setEmail(email: string): void {
         this.email = email;
     }
+    
+    public getPassword(): string {
+        return this.password;
+    }
+
+    public setPassword(password :string): void {
+        this.password = password;
+    };
+
+    public getConfirmPassword(): string {
+        return this.confirmpassword;
+    }
+
+    public setConfirmPassword(password :string): void {
+        this.confirmpassword = password;
+    };
 }
 
